@@ -16,11 +16,11 @@ private:
 
 public:
     class GradeTooHighException : public std::exception {
-        const char *what() const throw() { return "Grade is too high."; }
+        const char *what() const throw();
     };
 
     class GradeTooLowException : public std::exception {
-        const char *what() const throw() { return "Grade is too low."; }
+        const char *what() const throw();
     };
 
     Bureaucrat(const std::string &name, int grade);

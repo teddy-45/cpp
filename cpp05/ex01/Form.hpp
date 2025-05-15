@@ -3,7 +3,7 @@
 
 #include <string>
 #include <iostream>
-#include <stdexcept>
+#include <exception>
 #include "Bureaucrat.hpp"
 
 class Form {
@@ -17,15 +17,11 @@ private:
 
 public:
     class GradeTooHighException : public std::exception {
-        const char *what() const throw() {
-            return "Form grade is too high.";
-        }
+        virtual const char *what() const throw();
     };
 
     class GradeTooLowException : public std::exception {
-        const char *what() const throw() {
-            return "Form grade is too low.";
-        }
+        virtual const char *what() const throw();
     };
 
     Form(const std::string &name, int gradeToSign, int gradeToExecute);

@@ -44,6 +44,14 @@ void Bureaucrat::validateGrade(int grade) const {
     }
 }
 
+const char* Bureaucrat::GradeTooHighException::what() const throw() {
+    return "Grade is too high.";
+}
+
+const char* Bureaucrat::GradeTooLowException::what() const throw() {
+    return "Grade is too low.";
+}
+
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &bureaucrat) {
     out << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade();
     return out;

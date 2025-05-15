@@ -24,6 +24,17 @@ bool AForm::getIsSigned() const { return isSigned; }
 int AForm::getGradeToSign() const { return gradeToSign; }
 int AForm::getGradeToExecute() const { return gradeToExecute; }
 
+const char *AForm::FormNotSignedException::what() const throw() {
+    return "Form is not signed.";
+}
+
+const char *AForm::GradeTooHighException::what() const throw() {
+    return "Form grade is too high.";
+}
+
+const char *AForm::GradeTooLowException::what() const throw() {
+    return "Form grade is too low.";
+}
 void AForm::validateGrade(int grade) const {
     if (grade < 1) {
         throw GradeTooHighException();
