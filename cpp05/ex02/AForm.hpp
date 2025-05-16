@@ -2,10 +2,9 @@
 #define AFORM_HPP
 
 #include <iostream>
-#include <string>
-#include <stdexcept>
+#include <exception>
 
-class Bureaucrat; 
+class Bureaucrat;
 class AForm {
 private:
     const       std::string name;
@@ -13,9 +12,7 @@ private:
     const int   gradeToSign;
     const int   gradeToExecute;
     void validateGrade(int grade) const;
-
-protected:
-    virtual void executeAction() const = 0;
+    AForm();
 
 public:
     class GradeTooHighException : public std::exception {
@@ -30,7 +27,6 @@ public:
         const char *what() const throw();
     };
 
-    AForm();
     AForm(const std::string &name, int gradeToSign, int gradeToExecute);
     AForm(const AForm &other);
     AForm &operator=(const AForm &other);
@@ -42,7 +38,7 @@ public:
     int getGradeToExecute() const;
 
     void beSigned(const Bureaucrat &b);
-    void execute(const Bureaucrat &executor) const;
+    virtual void execute(const Bureaucrat &executor) const = 0;
 };
 
 std::ostream &operator<<(std::ostream &out, const AForm &form);

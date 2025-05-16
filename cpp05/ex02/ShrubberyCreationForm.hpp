@@ -3,14 +3,16 @@
 
 #include "AForm.hpp"
 #include <fstream>
+#include "Bureaucrat.hpp"
 
 class ShrubberyCreationForm : public AForm {
 private:
     std::string target;
-    void executeAction() const;
 
 public:
+    ShrubberyCreationForm();
     ShrubberyCreationForm(const std::string &target);
+    void execute(const Bureaucrat &executor) const;
     ~ShrubberyCreationForm();
 };
 
