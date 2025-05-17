@@ -4,15 +4,21 @@
 #include "AForm.hpp"
 #include <cstdlib>
 #include <ctime>
+#include "Bureaucrat.hpp"
 
 class RobotomyRequestForm : public AForm {
 private:
     std::string target;
-    void executeAction() const;
 
 public:
+    RobotomyRequestForm();
     RobotomyRequestForm(const std::string &target);
+    RobotomyRequestForm(const RobotomyRequestForm &other);
+    RobotomyRequestForm &operator=(const RobotomyRequestForm &other);
     ~RobotomyRequestForm();
+    
+    void execute(const Bureaucrat &executor) const;
 };
+
 
 #endif
