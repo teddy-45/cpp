@@ -22,7 +22,7 @@ void ShrubberyCreationForm::execute(const Bureaucrat &executor) const {
         throw FormNotSignedException();
     }
     std::ofstream file((target + "_shrubbery").c_str());
-    if (!file) {
+    if (!file.is_open()) {
         std::cout << "Error: Unable to create " << target << "_shrubbery file.\n";
         return;
     }

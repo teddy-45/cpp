@@ -1,5 +1,7 @@
 #include "Form.hpp"
 
+Form::Form() : name(""), isSigned(false), gradeToSign(150), gradeToExecute(150) {}
+
 Form::Form(const std::string &name, int gradeToSign, int gradeToExecute)
     : name(name), isSigned(false), gradeToSign(gradeToSign), gradeToExecute(gradeToExecute) {
     validateGrade(gradeToSign);

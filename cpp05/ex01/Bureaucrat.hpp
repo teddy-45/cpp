@@ -12,6 +12,7 @@ private:
     const std::string name;
     int grade;
     void validateGrade(int grade) const;
+    Bureaucrat();
 
 public:
     class GradeTooHighException : public std::exception {
@@ -21,7 +22,6 @@ public:
     class GradeTooLowException : public std::exception {
         const char *what() const throw();
     };
-
     Bureaucrat(const std::string &name, int grade);
     Bureaucrat(const Bureaucrat &other);
     Bureaucrat &operator=(const Bureaucrat &other);

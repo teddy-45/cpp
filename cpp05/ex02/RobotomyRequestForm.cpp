@@ -5,12 +5,19 @@
 class Bureaucrat;
 class AForm;
 RobotomyRequestForm::RobotomyRequestForm() : AForm("obotomyRequestForm", 72, 45), target("target") {}
+
 RobotomyRequestForm::RobotomyRequestForm(const std::string &target) : AForm("RobotomyRequestForm", 72, 45), target(target) {
     std::srand(std::time(0));
+
 }
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &other) : AForm("RobotomyRequestForm", 72, 45), target(other.target) {}
 
 RobotomyRequestForm::~RobotomyRequestForm() {}
 
+RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &other) {
+    this->target = other.target;
+    return *this;
+}
 
 void RobotomyRequestForm::execute(const Bureaucrat &executor) const
 {

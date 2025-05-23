@@ -12,6 +12,7 @@ private:
     bool isSigned;
     const int gradeToSign;
     const int gradeToExecute;
+    Form();
 
     void validateGrade(int grade) const;
 
@@ -23,7 +24,6 @@ public:
     class GradeTooLowException : public std::exception {
         virtual const char *what() const throw();
     };
-
     Form(const std::string &name, int gradeToSign, int gradeToExecute);
     Form(const Form &other);
     Form &operator=(const Form &other);

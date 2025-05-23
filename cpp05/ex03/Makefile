@@ -1,23 +1,30 @@
-CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 NAME = form
 
+RM = rm -f
+
 SRC = main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp Intern.cpp
+
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
+
 OBJ = $(SRC:.cpp=.o)
 
-all: $(NAME)
+CPP = c++
 
-$(NAME): $(OBJ)
-	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
+INCLUDE = Bureaucrat.hpp AForm.hpp PresidentialPardonForm.hpp RobotomyRequestForm.hpp ShrubberyCreationForm.hpp Intern.hpp
 
-%.o: %.cpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+all		: $(NAME)
 
-clean:
-	rm -f $(OBJ) home_shrubbery
+%.o		: %.cpp $(INCLUDE)
+		$(CPP) $(CPPFLAGS) -c $< -o $@
 
-fclean: clean
-	rm -f $(NAME)
+$(NAME)	: $(OBJ)
+		$(CPP) $(CPPFLAGS) $(OBJ) -o $@
+
+
+clean	:
+		$(RM) $(OBJ) *_shrubbery
+
+fclean	: clean
+		$(RM) $(NAME)
 
 re: fclean all
-

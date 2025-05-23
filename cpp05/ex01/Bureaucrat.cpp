@@ -1,6 +1,8 @@
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 
+Bureaucrat::Bureaucrat(const Bureaucrat &other) : name(other.name), grade(other.grade) {}
+
 Bureaucrat::Bureaucrat(const std::string &name, int grade) : name(name) {
     validateGrade(grade);
     this->grade = grade;

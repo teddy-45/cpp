@@ -12,8 +12,11 @@ private:
 public:
     ShrubberyCreationForm();
     ShrubberyCreationForm(const std::string &target);
-    void execute(const Bureaucrat &executor) const;
+    ShrubberyCreationForm(const ShrubberyCreationForm &other);
+    ShrubberyCreationForm &operator=(const ShrubberyCreationForm &other);
     ~ShrubberyCreationForm();
+
+    void execute(const Bureaucrat &executor) const;
 };
 
 #endif
