@@ -1,6 +1,6 @@
-#ifndef PRESIDENTIALPARDONFORM_HPP
-#define PRESIDENTIALPARDONFORM_HPP
-
+// #ifndef PRESIDENTIALPARDONFORM_HPP
+// #define PRESIDENTIALPARDONFORM_HPP
+#pragma once
 #include "AForm.hpp"
 #include "Bureaucrat.hpp"
 #include <iostream>
@@ -18,5 +18,3 @@ public:
     
     void execute(const Bureaucrat &executor) const;
 };
-
-#endif

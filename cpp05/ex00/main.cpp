@@ -19,7 +19,7 @@ int main() {
         std::cerr << "Exception1: " << e.what() << std::endl;
     }
     try {
-        Bureaucrat high("High", -1); 
+        Bureaucrat high("High", 1); 
         high.decrementGrade();
         std::cout << high << "\n";
     } catch (const std::exception &e) {

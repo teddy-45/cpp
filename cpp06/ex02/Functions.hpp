@@ -5,9 +5,9 @@
 #include "A.hpp"
 #include "B.hpp"
 #include "C.hpp"
-#include <cstdlib> 
 #include <ctime> 
 #include <iostream>
+#include <cstdlib> 
 
 Base *generate();
 void identify(Base *p);

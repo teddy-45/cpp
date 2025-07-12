@@ -1,10 +1,11 @@
 #ifndef SCALARCONVERTER_HPP
 #define SCALARCONVERTER_HPP
 
-#include <iostream>
-#include <sstream>
-#include <limits>
 #include <cmath>
+#include <iostream>
+#include <cstdlib>
+#include <climits>
+#include <cfloat>
 
 class ScalarConverter {
 private:
@@ -18,3 +19,4 @@ public:
 };
 
 #endif
+

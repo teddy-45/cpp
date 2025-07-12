@@ -1,9 +1,8 @@
 #include "Serializer.hpp"
-#include <iostream>
 
 int main() {
     Data data;
-    data.value = 420;
+    data.value = 4599;
     data.name = "Teddy Data";
 
     std::cout << "Original Data Address: " << &data << std::endl;
@@ -11,6 +10,7 @@ int main() {
 
     uintptr_t raw = Serializer::serialize(&data);
     std::cout << "Serialized Data: " << raw << std::endl;
+    data.value++;
 
     Data *deserializedData = Serializer::deserialize(raw);
     std::cout << "Deserialized Data Address: " << deserializedData << std::endl;

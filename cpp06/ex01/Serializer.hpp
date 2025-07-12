@@ -4,11 +4,7 @@
 #include <stdint.h>   
 #include <iostream>
 #include <string>
-
-struct Data {
-    int value;
-    std::string name;
-};
+#include "Data.hpp"
 
 class Serializer {
 private:
@@ -21,5 +17,5 @@ public:
     static uintptr_t serialize(Data *ptr);
     static Data *deserialize(uintptr_t raw);
 };
-
 #endif
+

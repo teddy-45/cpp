@@ -1,17 +1,22 @@
-CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = Base
+NAME = identify
 
 SRC = main.cpp Base.cpp Functions.cpp
+
+CPP = c++
+
 OBJ = $(SRC:.cpp=.o)
+
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
+
+INCLUDE = Base.hpp A.hpp B.hpp C.hpp Functions.hpp
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
+	$(CPP) $(CPPFLAGS) $(OBJ) -o $(NAME)
 
-%.o: %.cpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+%.o: %.cpp $(INCLUDE)
+	$(CPP) $(CPPFLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJ)

@@ -1,7 +1,4 @@
 #include "Functions.hpp"
-#include <cstdlib> 
-#include <ctime>   
-#include <iostream>
 
 Base *generate() {
     std::srand(std::time(0)); 
