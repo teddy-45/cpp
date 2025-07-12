@@ -4,7 +4,7 @@
 #include <iostream>
 #include <exception>
 
-template <typename T>
+// template <typename T>
 void printElement(const T &elem) {
     std::cout << elem << " ";
 }
